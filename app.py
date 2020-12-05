@@ -26,8 +26,8 @@ MEDIUM = (197, 195, 198)
 DARK = (70, 73, 76)
 ACCENT_1 = (76, 92, 104)
 ACCENT_2 = (25, 133, 161)
-GREEN = (140, 94, 88)
-RED = (92, 116, 87)
+RED = (140, 94, 88)
+GREEN = (92, 116, 87)
 HIGHLIGHT = (255, 255, 117)
 #endregion
 
@@ -101,6 +101,10 @@ class App():
         self.grid_option = self.difficulties[2]
         self.initialize_grid()
 
+        # Messaging
+        self.banner = ""
+        self.banner_color = WHITE
+
     def initialize_buttons(self):
         self.buttons.append(Button(75, 400, 50, 50, "New", self.initialize_grid))
         self.buttons.append(Button(75, 455, 10, 10, "-", self.decrease_difficulty))
@@ -109,6 +113,10 @@ class App():
         self.buttons.append(Button(225, 400, 50, 50, "Solve", self.auto_solve))
 
     def initialize_grid(self):
+        # Clear Messages
+        self.banner = ""
+        self.banner_color = WHITE
+        # Generate Puzzle
         self.grid_width = self.grid_option[0]
         self.grid_height = self.grid_option[1]
         self.grid, self.solution = cross_sum.generate_puzzle(self.grid_width, self.grid_height)
@@ -120,10 +128,11 @@ class App():
     def check_solution(self):
         is_solved = cross_sum.check_solution(self.grid)
         if (is_solved): 
-            print("Hooray!")
+            self.banner = "You solved the puzzle!"
+            self.banner_color = GREEN
         else:
-            print("Not Solved.")
-        return is_solved
+            self.banner = "The puzzle is not solved"
+            self.banner_color = RED
 
     def auto_solve(self):
         self.grid = self.solution
@@ -235,6 +244,10 @@ class App():
         # Difficulty
         image = HEADER_FONT.render(self.difficulty, True, ACCENT_1)
         self.window.blit(image, (92, 455))
+        # Banner
+        image = SUBTITLE_FONT.render(self.banner, True, self.banner_color)
+        image_x_offset = (WINDOW_WIDTH // 2) - (image.get_width() // 2)
+        self.window.blit(image, (image_x_offset, 100))
 
     def draw_text(self, text, position, color):
         image = NUMBER_FONT.render(text, True, color)

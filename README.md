@@ -14,22 +14,25 @@ in any one row or column.
 For more information, visit [WikiPedia]https://en.wikipedia.org/wiki/Kakuro
 
 ##### HOW TO RUN
-in the program direction, run one of the commands:
-    `python3 main.py`
-    or
-    `py main.py`
+in the program direction, run one of the commands:  
+    `python3 main.py`  
+    or  
+    `py main.py`  
 or from an IDE, run the main.py file.
 
 ###### FILES
 There are 3 files included in the program:
 
 *app.py*
-    This file contains the "frontend" for the game. It contains the code for the GUI, which is 
-    responsible for displaying the information to the player and accepting input to play the game
+    This file contains the "frontend" for the game. It contains the code for 
+    the GUI, which is responsible for displaying the information to the player 
+    and accepting input to play the game
 
 *cross_sum.py*
-    This file contains the "backend" for the game. It contains the algorithms for generating and 
-    solving the puzzles, as well as the functionality for checking solutions.
+    This file contains the "backend" for the game. It contains the algorithms 
+    for generating and solving the puzzles, as well as the functionality for 
+    checking solutions.
 
 *main.py*
-    This is the main "executable" file for the game that creates an instance of the program to run.
+    This is the main file for the game that creates an instance of the 
+    application to run.

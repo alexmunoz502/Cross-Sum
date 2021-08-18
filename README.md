@@ -11,7 +11,7 @@ correct integer values in each white box such that each horizontal and vertical
 line correctly add up to the value in the cap, and no two integers are repeated
 in any one row or column.
 
-For more information, visit [WikiPedia]https://en.wikipedia.org/wiki/Kakuro
+For more information, visit [WikiPedia](https://en.wikipedia.org/wiki/Kakuro)
 
 ##### HOW TO RUN
 in the program direction, run one of the commands:  

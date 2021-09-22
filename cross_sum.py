@@ -12,7 +12,7 @@ import copy
 #region Class(es)
 class Cell():
     """
-    DECRIPTION
+    DESCRIPTION
     Represents a cell in a grid for the game Cross Sum
 
     ATTRIBUTES
